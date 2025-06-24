@@ -183,7 +183,7 @@ func checkForCommandInjection(command string) error {
 		}
 	}
 
-	allPatterns := append(dangerousPatterns, "bash", "sh", "/bin/", "python", "perl", "ruby", "node")
+	allPatterns := append(dangerousPatterns, "bash", "sh", "/bin/", "python", "perl", "ruby")
 	for _, pattern := range allPatterns {
 		if strings.Contains(lowerCommand, pattern) {
 			return fmt.Errorf("command contains potentially dangerous pattern: %s", pattern)
